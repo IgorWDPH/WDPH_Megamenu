@@ -4,7 +4,15 @@
 		<wdph_megamenu_main>
 			<general>
 				<enable>1</enable>
-				<display_text>Lorem Ipsum</display_text>				
+				<home>1</home>
+				<sidebar>1</sidebar>
+				<menu_type>fullwidth</menu_type>
+				<visible_menu_depth>0</visible_menu_depth>
+				<label1>New</label1>
+				<label2>Hot</label2>
+				<label3>Sale</label3>
+				<staticblock_before></staticblock_before>
+                <staticblock_after></staticblock_after>
 			</general>			
 		</wdph_megamenu_main>
 	</default>
