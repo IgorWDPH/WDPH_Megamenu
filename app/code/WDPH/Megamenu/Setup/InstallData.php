@@ -20,9 +20,10 @@ class InstallData implements InstallDataInterface
 		$setup->startSetup();
 		
 		$eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
-		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_test_attr_0', [
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_hide_item', [
             'type'		=> 'int',
-            'label'    	=> 'Boolean Attr',
+            'label'    	=> 'Hide Menu Item',
             'input'    	=> 'boolean',
             'source'   	=> 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
             'visible'  	=> true,
@@ -31,25 +32,100 @@ class InstallData implements InstallDataInterface
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
         ]);
-		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_test_attr_1', [
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_dropdown_type', [
             'type'		=> 'varchar',
-            'label'    	=> 'Select Attr',
+            'label'    	=> 'Dropdown Type',
             'input' 	=> 'select',
-            'source' 	=> 'WDPH\Megamenu\Model\Attribute\Selecttype',
+            'source' 	=> 'WDPH\Megamenu\Model\Attribute\Menutype',
             'required' 	=> false,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
         ]);
-		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_test_attr_2', [
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_float', [
+            'type'		=> 'varchar',
+            'label'    	=> 'Float',
+            'input' 	=> 'select',
+            'source' 	=> 'WDPH\Megamenu\Model\Attribute\Floattype',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_cat_label', [
+            'type'		=> 'varchar',
+            'label'    	=> 'Category Label',
+            'input' 	=> 'select',
+            'source' 	=> 'WDPH\Megamenu\Model\Attribute\Catlabel',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_top_block_con', [
             'type' 		=> 'text',
-            'label'    	=> 'Text Area',
-            'input' 	=> 'textarea',                        
+			'label' 	=> 'Top Block Content',
+			'input' 	=> 'textarea',
+			'required' 	=> false,			
+			'wysiwyg_enabled' 			=> true,
+			'is_html_allowed_on_front' 	=> true,
+			'global' 	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+			'group' 	=> 'WDPH Megamenu'
+        ]);		
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_bot_block_cont', [
+            'type' 		=> 'text',
+			'label' 	=> 'Bottom Block Content',
+			'input' 	=> 'textarea',
+			'required' 	=> false,			
+			'wysiwyg_enabled' 			=> true,
+			'is_html_allowed_on_front' 	=> true,
+			'global' 	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+			'group' 	=> 'WDPH Megamenu'
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_left_block_cont', [
+            'type' 		=> 'text',
+			'label' 	=> 'Left Block Content',
+			'input' 	=> 'textarea',
+			'required' 	=> false,			
+			'wysiwyg_enabled' 			=> true,
+			'is_html_allowed_on_front' 	=> true,
+			'global' 	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+			'group' 	=> 'WDPH Megamenu'
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_left_block_w', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Left Block Width',
+            'input' 	=> 'text',                       
             'required' 	=> false,
-			'wysiwyg_enabled' => true,
-			'is_html_allowed_on_front' => true,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
         ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_right_block_cont', [
+            'type' 		=> 'text',
+			'label' 	=> 'Right Block Content',
+			'input' 	=> 'textarea',
+			'required' 	=> false,			
+			'wysiwyg_enabled' 			=> true,
+			'is_html_allowed_on_front' 	=> true,
+			'global' 	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+			'group' 	=> 'WDPH Megamenu'
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_right_block_w', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Right Block Width',
+            'input' 	=> 'text',                       
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
+		/*
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_test_attr_3', [
             'type' 		=> 'varchar',
             'label' 	=> 'Image',
@@ -58,15 +134,7 @@ class InstallData implements InstallDataInterface
             'required' 	=> false,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
-        ]);
-		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_test_attr_4', [
-            'type' 		=> 'varchar',
-            'label'    	=> 'Text Attr',
-            'input' 	=> 'text',                       
-            'required' 	=> false,
-            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
-            'group'    	=> 'WDPH Megamenu',
-        ]);
+        ]);*/
 		
 		$setup->endSetup();
 	}

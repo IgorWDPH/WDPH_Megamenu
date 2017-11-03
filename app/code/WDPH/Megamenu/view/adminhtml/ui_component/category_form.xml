@@ -8,13 +8,13 @@
                 <item name="sortOrder" xsi:type="number">99999</item>
             </item>
         </argument>
-        <field name="wdph_test_attr_0">
+        <field name="wdph_megamenu_hide_item">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">10</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
                     <item name="dataType" xsi:type="string">boolean</item>
                     <item name="formElement" xsi:type="string">checkbox</item>
-                    <item name="label" xsi:type="string" translate="true">Boolean Attr</item>
+                    <item name="label" xsi:type="string" translate="true">Hide Menu Item</item>
                     <item name="prefer" xsi:type="string">toggle</item>
                     <item name="valueMap" xsi:type="array">
                         <item name="true" xsi:type="string">1</item>
@@ -24,29 +24,109 @@
                 </item>
             </argument>
         </field>
-		<field name="wdph_test_attr_1">
+		<field name="wdph_megamenu_dropdown_type">
             <argument name="data" xsi:type="array">
-				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Selecttype</item>
+				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Menutype</item>
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">20</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">select</item>
-                    <item name="label" xsi:type="string" translate="true">Select Attr</item>
+                    <item name="label" xsi:type="string" translate="true">Dropdown Type</item>
                 </item>
             </argument>
         </field>
-		<field name="wdph_test_attr_2">
+		<field name="wdph_megamenu_float">
+            <argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Floattype</item>
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Float</item>
+                </item>
+            </argument>
+        </field>
+		<field name="wdph_megamenu_cat_label">
+            <argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Catlabel</item>
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Category Label</item>
+                </item>
+            </argument>
+        </field>
+		<field name="wdph_megamenu_top_block_con">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">30</item>
+					<item name="sortOrder" xsi:type="number">50</item>
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
                     <item name="formElement" xsi:type="string">wysiwyg</item>
-                    <item name="label" xsi:type="string" translate="true">Text Area</item>
+                    <item name="label" xsi:type="string" translate="true">Top Block Content</item>
                     <item name="template" xsi:type="string">ui/form/field</item>                    
                     <item name="rows" xsi:type="number">3</item>
                 </item>
             </argument>
         </field>
+		<field name="wdph_megamenu_bot_block_cont">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+					<item name="sortOrder" xsi:type="number">60</item>
+                    <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
+                    <item name="formElement" xsi:type="string">wysiwyg</item>
+                    <item name="label" xsi:type="string" translate="true">Bottom Block Content</item>
+                    <item name="template" xsi:type="string">ui/form/field</item>                    
+                    <item name="rows" xsi:type="number">3</item>
+                </item>
+            </argument>
+        </field>
+		<field name="wdph_megamenu_left_block_cont">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="sortOrder" xsi:type="number">70</item>
+					<item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
+					<item name="formElement" xsi:type="string">wysiwyg</item>
+					<item name="label" xsi:type="string" translate="true">Left Block Content</item>
+					<item name="template" xsi:type="string">ui/form/field</item>                    
+					<item name="rows" xsi:type="number">3</item>
+				</item>
+			</argument>
+		</field>		
+		<field name="wdph_megamenu_left_block_w">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">80</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Left Block Width</item>
+                </item>
+            </argument>
+        </field>
+		<field name="wdph_megamenu_right_block_cont">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="sortOrder" xsi:type="number">90</item>
+					<item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
+					<item name="formElement" xsi:type="string">wysiwyg</item>
+					<item name="label" xsi:type="string" translate="true">Right Block Content</item>
+					<item name="template" xsi:type="string">ui/form/field</item>                    
+					<item name="rows" xsi:type="number">3</item>
+				</item>
+			</argument>
+		</field>		
+		<field name="wdph_megamenu_right_block_w">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">100</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Right Block Width</item>
+                </item>
+            </argument>
+        </field>
+		
+		<!--
 		<field name="wdph_test_attr_3">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -63,15 +143,6 @@
                 </item>
             </argument>
         </field>
-		<field name="wdph_test_attr_4">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">40</item>
-                    <item name="dataType" xsi:type="string">string</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="label" xsi:type="string" translate="true">Text Attr</item>
-                </item>
-            </argument>
-        </field>
+		-->
     </fieldset>
 </form>
