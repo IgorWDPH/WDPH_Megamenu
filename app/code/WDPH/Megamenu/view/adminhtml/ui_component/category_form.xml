@@ -142,7 +142,7 @@
 			</settings>
         </field>
 		
-		<container name="stock_on_hand_container" >
+		<container name="wdph_megamenu_additional" >
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
 					<item name="sortOrder" xsi:type="number">999999</item>
