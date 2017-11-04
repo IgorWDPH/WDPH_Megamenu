@@ -131,8 +131,22 @@
                     <item name="sortOrder" xsi:type="number">110</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="label" xsi:type="string" translate="true">Item Hover Background Color</item>
-					<item name="description" xsi:type="string" translate="true">Lorem Ipsum</item>
+                    <item name="label" xsi:type="string" translate="true">Item Hover Background Color</item>					
+                </item>
+            </argument>
+			<settings>
+				<additionalClasses>
+					<class name="wdph-color-picker">true</class>
+				</additionalClasses>				
+			</settings>
+        </field>
+		<field name="wdph_megamenu_drop_back_c">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">120</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Dropdown Background Color</item>					
                 </item>
             </argument>
 			<settings>

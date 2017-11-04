@@ -247,8 +247,8 @@ jQuery._farbtastic = function (container, callback) {
 
       // Change linked value
       $(fb.callback).each(function() {
-        if (this.value && this.value != fb.color) {
-          $(this).val(fb.color).trigger('change');
+        if ($(this).val && $(this).val != fb.color) {
+		  $(this).val(fb.color).trigger('change');
         }
       });
     }
