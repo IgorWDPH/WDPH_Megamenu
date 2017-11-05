@@ -43,6 +43,15 @@ class InstallData implements InstallDataInterface
             'group'    	=> 'WDPH Megamenu',
         ]);
 		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_item_url', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Custom URL',
+            'input' 	=> 'text',                       
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_float', [
             'type'		=> 'varchar',
             'label'    	=> 'Float',
@@ -145,13 +154,30 @@ class InstallData implements InstallDataInterface
 		
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_drop_back_i', [
             'type' 		=> 'varchar',
-            'label' 	=> 'Image',
+            'label' 	=> 'Dropdown Background Image',
             'input' 	=> 'image',
 			'backend' 	=> 'Magento\Catalog\Model\Category\Attribute\Backend\Image',
             'required' 	=> false,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
         ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_color', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Font Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_hcolor', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Hover Font Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);		
 		
 		$setup->endSetup();
 	}
