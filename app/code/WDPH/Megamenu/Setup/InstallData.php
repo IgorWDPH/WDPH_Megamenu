@@ -141,10 +141,9 @@ class InstallData implements InstallDataInterface
             'required' 	=> false,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
-        ]);
+        ]);		
 		
-		/*
-		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_test_attr_3', [
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_drop_back_i', [
             'type' 		=> 'varchar',
             'label' 	=> 'Image',
             'input' 	=> 'image',
@@ -152,7 +151,7 @@ class InstallData implements InstallDataInterface
             'required' 	=> false,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
-        ]);*/
+        ]);
 		
 		$setup->endSetup();
 	}
