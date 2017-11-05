@@ -164,27 +164,11 @@
 					<class name="wdph-color-picker">true</class>
 				</additionalClasses>				
 			</settings>
-        </field>
-		<field name="wdph_megamenu_drop_back_i">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">140</item>
-                    <item name="label" xsi:type="string" translate="true">Dropdown Background Image</item>
-                    <item name="formElement" xsi:type="string">fileUploader</item>
-                    <item name="componentType" xsi:type="string">fileUploader</item>
-                    <item name="notice" xsi:type="string" translate="true">Allowed file types: jpeg, gif, png.</item>
-                    <item name="maxFileSize" xsi:type="number">2097152</item>
-                    <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png svg</item>
-                    <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="string">catalog/category_image/upload</item>
-                    </item>
-                </item>
-            </argument>
-        </field>
+        </field>		
 		<field name="wdph_megamenu_font_color">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">130</item>
+                    <item name="sortOrder" xsi:type="number">140</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Font Color</item>					
@@ -199,7 +183,7 @@
 		<field name="wdph_megamenu_font_hcolor">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">130</item>
+                    <item name="sortOrder" xsi:type="number">150</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Hover Font Color</item>					
@@ -210,7 +194,23 @@
 					<class name="wdph-color-picker">true</class>
 				</additionalClasses>				
 			</settings>
-        </field>		
+        </field>
+		<field name="wdph_megamenu_drop_back_i">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+					<item name="sortOrder" xsi:type="number">160</item>
+                    <item name="label" xsi:type="string" translate="true">Dropdown Background Image</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="componentType" xsi:type="string">fileUploader</item>
+                    <item name="notice" xsi:type="string" translate="true">Allowed file types: jpeg, gif, png.</item>
+                    <item name="maxFileSize" xsi:type="number">2097152</item>
+                    <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png svg</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="string">catalog/category_image/upload</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
 		<container name="wdph_megamenu_additional" >
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
