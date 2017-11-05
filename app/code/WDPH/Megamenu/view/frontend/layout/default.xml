@@ -3,7 +3,7 @@
     <body>
         <referenceBlock name="catalog.topnav" remove="true"/>
         <referenceContainer name="page.top">
-            <block class="WDPH\Megamenu\Block\Html\Topmenu" name="wdph.topnavigation" template="WDPH_Megamenu::html/topmenu.phtml" before="-"/>
+            <block class="WDPH\Megamenu\Block\Html\Navigation" name="wdph.topnavigation" template="WDPH_Megamenu::html/topmenu.phtml" before="-"/>
         </referenceContainer>        
     </body>
 </page>
