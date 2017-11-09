@@ -1,1 +1,15 @@
-<?php echo $this->renderCategoriesMenuHtml(); ?>
+<?php if($this->megamenuHelper->getConfig('general/enable')): ?>
+<div class="wdph-megamenu-container">
+	<div class="wdph-megamenu-block-before">
+		<?php echo $this->renderBlockBeforeMenu(); ?>
+	</div>
+	<div class="wdph-megamenu-navigation-container">
+		<ul class="wdph-megamenu">		
+			<?php echo $this->renderCategoriesMenuHtml(); ?>
+		</ul>
+	</div>
+	<div class="wdph-megamenu-block-after">
+		<?php echo $this->renderBlockAfterMenu(); ?>
+	</div>
+</div>
+<?php endif; ?>
