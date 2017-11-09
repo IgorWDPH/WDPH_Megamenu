@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/catalog_attributes.xsd">
+    <group name="catalog_category">
+        <attribute name="wdph_megamenu_hide_item" />
+        <attribute name="wdph_megamenu_dropdown_type" />
+        <attribute name="wdph_megamenu_item_url" />
+        <attribute name="wdph_megamenu_float" />
+        <attribute name="wdph_megamenu_cat_label" />
+        <attribute name="wdph_megamenu_top_block_con" />
+        <attribute name="wdph_megamenu_bot_block_cont" />
+        <attribute name="wdph_megamenu_left_block_cont" />
+        <attribute name="wdph_megamenu_left_block_w" />
+        <attribute name="wdph_megamenu_right_block_cont" />
+		<attribute name="wdph_megamenu_right_block_w" />
+		<attribute name="wdph_megamenu_item_hover_c" />
+		<attribute name="wdph_megamenu_drop_back_c" />
+		<attribute name="wdph_megamenu_drop_back_i" />
+		<attribute name="wdph_megamenu_font_color" />
+		<attribute name="wdph_megamenu_font_hcolor" />
+    </group>
+</config>
