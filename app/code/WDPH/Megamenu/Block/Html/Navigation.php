@@ -40,11 +40,12 @@ class Navigation extends \Magento\Catalog\Block\Navigation
                 $activeCategories[] = $child;
             }
         }
+		$menuDepth = $this->megamenuHelper->getConfig('general/visible_menu_depth');
 		$html = '';
 		$html .= $this->renderHomeItem();
 		foreach ($activeCategories as $category)
 		{			
-            $html .= $this->renderCategoryMenuItemHtml($category);
+            $html .= $this->renderCategoryMenuItemHtml($category, $menuDepth);
         }
 		return $html;
 	}
@@ -54,9 +55,9 @@ class Navigation extends \Magento\Catalog\Block\Navigation
         return $this->catalogCategoryHelper->getStoreCategories();
     }
 	
-	protected function renderCategoryMenuItemHtml($category, $level = 0)
+	protected function renderCategoryMenuItemHtml($category, $menuDepth, $level = 0)
 	{		
-		if (!$category->getIsActive() || $category->getData('wdph_megamenu_hide_item'))
+		if (!$category->getIsActive() || $category->getData('wdph_megamenu_hide_item') || (intval($menuDepth) && $menuDepth <= $level))
 		{
             return '';
         }
@@ -83,7 +84,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
             $children = $category->getChildren();   
 			$childrenCount = $children->count();			
         }
-		if($childrenCount)
+		if($childrenCount && (!intval($menuDepth) || (intval($menuDepth) && $menuDepth > $level + 1)))
 		{
 			$dropdownTopBlock = '';
 			$dropdownBottomBlock = '';
@@ -115,7 +116,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			$html .= '<div class="wdph-megamenu-submenu level' . $level . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="">';
 			foreach ($children as $child)
 			{
-				$html .= $this->renderCategoryMenuItemHtml($child, $level + 1);
+				$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $level + 1);
 			}
 			$html .= '</ul>' . $dropdownBottomBlock . $dropdownRightBlock . '</div>';
 		}
