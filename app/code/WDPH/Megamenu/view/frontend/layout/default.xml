@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="WDPH_Megamenu::css/wdph_megamenu_local.css"/>
+		<css src="WDPH_Megamenu::css/wdph_megamenu_responsive.css"/>
+        <link src="WDPH_Megamenu::js/wdph_megamenu_main.js"/>
+	</head>
     <body>
         <referenceBlock name="catalog.topnav" remove="true"/>
         <referenceContainer name="page.top">
