@@ -49,6 +49,34 @@
                     <comment>This block will be shown after top navigation menu.</comment>
                 </field>
 			</group>
+			<group id="appearance" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Megamenu Appearance</label>				
+				<field id="google_font" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Megamenu Font</label>
+                    <source_model>WDPH\Megamenu\Model\Config\Font</source_model>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Font</frontend_model>
+                </field>				
+				<field id="background_color" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Menu Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="item_hover_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Menu Item Hover Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="font_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Menu Item Font Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="font_hover_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Menu Item Hover Font Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="dropdown_background_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Menu Dropdown Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+			</group>
 		</section>
 	</system>
 </config>

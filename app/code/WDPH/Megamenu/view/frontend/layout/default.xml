@@ -6,9 +6,12 @@
         <link src="WDPH_Megamenu::js/wdph_megamenu_main.js"/>
 	</head>
     <body>
+		<referenceBlock name="head.additional">
+			<block class="WDPH\Megamenu\Block\Html\Head" name="wdph.megamenu.head_additional" template="WDPH_Megamenu::html/head_additional.phtml" />
+		</referenceBlock>
         <referenceBlock name="catalog.topnav" remove="true"/>
         <referenceContainer name="page.top">
-            <block class="WDPH\Megamenu\Block\Html\Navigation" name="wdph.topnavigation" template="WDPH_Megamenu::html/topmenu.phtml" before="-"/>
+            <block class="WDPH\Megamenu\Block\Html\Navigation" name="wdph.megamenu.topnavigation" template="WDPH_Megamenu::html/topmenu.phtml" before="-"/>
         </referenceContainer>        
     </body>
 </page>

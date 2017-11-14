@@ -1,1 +1,14 @@
-/*COMMON STYLES*/
+/*TOP NAVIGATION BEGIN*/
+.wdph-megamenu-container { display: block; max-width: 1280px; width: 100%; margin-left: auto; margin-right: auto; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container { background-color: #ccc; font-weight: 700; color: #000; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container a, .wdph-megamenu-container .wdph-megamenu-navigation-container a:visited { color: #000; }
+.wdph-megamenu-container ul.wdph-megamenu { padding: 0; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 { display: inline-block; margin: 0;}
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0:hover { background-color: #fff; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-item-float-left { float: left; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-item-float-right { float: right; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 a.item-link { display: inline-block; line-height: 47px; padding: 0 10px; text-decoration: none; }
+
+
+.wdph-megamenu-submenu { display: none; }
+/*TOP NAVIGATION END*/

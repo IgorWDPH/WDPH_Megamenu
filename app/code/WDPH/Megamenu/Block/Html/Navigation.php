@@ -27,7 +27,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		$this->storeManager = $storeManager;
 		$this->filterProvider = $filterProvider;
 		$this->megamenuHelper = $megamenuHelper;
-		parent::__construct($context, $categoryFactory, $productCollectionFactory, $layerResolver, $httpContext, $catalogCategoryHelper, $registry, $flatState, $data);		
+		parent::__construct($context, $categoryFactory, $productCollectionFactory, $layerResolver, $httpContext, $catalogCategoryHelper, $registry, $flatState, $data);				
     }
 	
 	public function renderCategoriesMenuHtml()
@@ -71,7 +71,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		}			
 		$additionalLiClasses .= ' wdph-dropdown-type-' . ($catDropDownType ? $catDropDownType : $this->megamenuHelper->getConfig('general/menu_type'));
 		$additionalLiClasses .= ($category->getData('wdph_megamenu_float') ? ' wdph-item-float-' . $category->getData('wdph_megamenu_float') : '');
-		$html .= '<li class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . '"><a class="" href="' .
+		$html .= '<li class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . '"><a class="item-link" href="' .
 					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
 					'"><span class="wdph-megamenu-item-label">' . $this->escapeHtml($category->getName()) . '</span>' . $catAddLabel . '</a>';
 		if ($this->flatState->isFlatEnabled())
@@ -128,7 +128,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 	{
 		if($this->megamenuHelper->getConfig('general/home'))
 		{
-			return '<li class="wdph-megamenu-item level-0"><a class="" href="' . $this->storeManager->getStore()->getBaseUrl() . '"><span class="wdph-megamenu-item-label">' . __('Home') . '</span></a></li>';
+			return '<li class="wdph-megamenu-item level-0"><a class="item-link" href="' . $this->storeManager->getStore()->getBaseUrl() . '"><span class="wdph-megamenu-item-label">' . __('Home') . '</span></a></li>';
 		}
 		return '';
 	}
