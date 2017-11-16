@@ -35,10 +35,21 @@
                 </item>
             </argument>
         </field>
-		<field name="wdph_megamenu_item_url">
+		<field name="wdph_megamenu_static_width">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Static Width</item>
+					<item name="notice" xsi:type="string" translate="true">eg: 256px</item>
+                </item>
+            </argument>
+        </field>
+		<field name="wdph_megamenu_item_url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">40</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Custom URL</item>
@@ -49,7 +60,7 @@
             <argument name="data" xsi:type="array">
 				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Floattype</item>
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Float</item>
@@ -60,7 +71,7 @@
             <argument name="data" xsi:type="array">
 				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Catlabel</item>
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Category Label</item>
@@ -70,7 +81,7 @@
 		<field name="wdph_megamenu_top_block_con">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">60</item>
+					<item name="sortOrder" xsi:type="number">70</item>
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
                     <item name="formElement" xsi:type="string">wysiwyg</item>
                     <item name="label" xsi:type="string" translate="true">Top Block Content</item>
@@ -82,7 +93,7 @@
 		<field name="wdph_megamenu_bot_block_cont">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">70</item>
+					<item name="sortOrder" xsi:type="number">80</item>
                     <item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
                     <item name="formElement" xsi:type="string">wysiwyg</item>
                     <item name="label" xsi:type="string" translate="true">Bottom Block Content</item>
@@ -94,7 +105,7 @@
 		<field name="wdph_megamenu_left_block_cont">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">80</item>
+					<item name="sortOrder" xsi:type="number">90</item>
 					<item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
 					<item name="formElement" xsi:type="string">wysiwyg</item>
 					<item name="label" xsi:type="string" translate="true">Left Block Content</item>
@@ -106,7 +117,7 @@
 		<field name="wdph_megamenu_left_block_w">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">90</item>
+                    <item name="sortOrder" xsi:type="number">100</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Left Block Width</item>
@@ -116,7 +127,7 @@
 		<field name="wdph_megamenu_right_block_cont">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">100</item>
+					<item name="sortOrder" xsi:type="number">110</item>
 					<item name="class" xsi:type="string">Magento\Catalog\Ui\Component\Category\Form\Element\Wysiwyg</item>
 					<item name="formElement" xsi:type="string">wysiwyg</item>
 					<item name="label" xsi:type="string" translate="true">Right Block Content</item>
@@ -128,7 +139,7 @@
 		<field name="wdph_megamenu_right_block_w">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">110</item>
+                    <item name="sortOrder" xsi:type="number">120</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Right Block Width</item>
@@ -138,7 +149,7 @@
 		<field name="wdph_megamenu_item_hover_c">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">120</item>
+                    <item name="sortOrder" xsi:type="number">130</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Item Hover Background Color</item>					
@@ -153,7 +164,7 @@
 		<field name="wdph_megamenu_drop_back_c">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">130</item>
+                    <item name="sortOrder" xsi:type="number">140</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Dropdown Background Color</item>					
@@ -168,7 +179,7 @@
 		<field name="wdph_megamenu_font_color">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">140</item>
+                    <item name="sortOrder" xsi:type="number">150</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Font Color</item>					
@@ -183,7 +194,7 @@
 		<field name="wdph_megamenu_font_hcolor">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">150</item>
+                    <item name="sortOrder" xsi:type="number">160</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Hover Font Color</item>					
@@ -198,7 +209,7 @@
 		<field name="wdph_megamenu_drop_back_i">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">160</item>
+					<item name="sortOrder" xsi:type="number">170</item>
                     <item name="label" xsi:type="string" translate="true">Dropdown Background Image</item>
                     <item name="formElement" xsi:type="string">fileUploader</item>
                     <item name="componentType" xsi:type="string">fileUploader</item>
