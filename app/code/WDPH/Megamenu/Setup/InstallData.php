@@ -43,6 +43,15 @@ class InstallData implements InstallDataInterface
             'group'    	=> 'WDPH Megamenu',
         ]);
 		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_static_width', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Static Width',
+            'input' 	=> 'text',                       
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_item_url', [
             'type' 		=> 'varchar',
             'label'    	=> 'Custom URL',

@@ -3,6 +3,7 @@
     <group name="catalog_category">
         <attribute name="wdph_megamenu_hide_item" />
         <attribute name="wdph_megamenu_dropdown_type" />
+		<attribute name="wdph_megamenu_static_width" />
         <attribute name="wdph_megamenu_item_url" />
         <attribute name="wdph_megamenu_float" />
         <attribute name="wdph_megamenu_cat_label" />
