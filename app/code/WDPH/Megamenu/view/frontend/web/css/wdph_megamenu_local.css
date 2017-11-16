@@ -1,6 +1,6 @@
 /*TOP NAVIGATION BEGIN*/
 .wdph-megamenu-container { display: block; max-width: 1280px; width: 100%; margin-left: auto; margin-right: auto; }
-.wdph-megamenu-container .wdph-megamenu-navigation-container { background-color: #ccc; font-weight: 700; color: #000; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container { position: relative; background-color: #ccc; font-weight: 700; color: #000; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container a, .wdph-megamenu-container .wdph-megamenu-navigation-container a:visited { color: #000; }
 .wdph-megamenu-container ul.wdph-megamenu { padding: 0; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 { display: inline-block; margin: 0;}
@@ -8,7 +8,15 @@
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-item-float-left { float: left; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-item-float-right { float: right; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 a.item-link { display: inline-block; line-height: 47px; padding: 0 10px; text-decoration: none; }
+.wdph-megamenu-container .wdph_megamenu-dropdown-top { clear: both; width: 100%; }
+.wdph-megamenu-container .wdph_megamenu-dropdown-bottom { clear: both; width: 100%; }
 
-
-.wdph-megamenu-submenu { display: none; }
+/*Wide Menu BEGIN*/
+.wdph-megamenu-container .wdph-megamenu-submenu { display: none; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 .wdph-megamenu-submenu.level0 { position: absolute; left: 0; width: 100%; background-color: #fff; z-index: 99999 }
+.wdph-megamenu-container .wdph-megamenu-submenu.visible { display: block; }
+.wdph-megamenu-container .wdph-dropdown-type-fullwidth .wdph-megamenu-submenu.visible .wdph-megamenu-submenu { display: block; }
+.wdph-megamenu-container .wdph-dropdown-type-fullwidth li.level-1 { float: left; width: 25%; }
+.wdph-megamenu-container .wdph-dropdown-type-fullwidth li.level-1:nth-child(4n+1) { clear: both; }
+/*Wide Menu END*/
 /*TOP NAVIGATION END*/

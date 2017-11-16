@@ -55,23 +55,44 @@ class Navigation extends \Magento\Catalog\Block\Navigation
         return $this->catalogCategoryHelper->getStoreCategories();
     }
 	
-	protected function renderCategoryMenuItemHtml($category, $menuDepth, $level = 0)
+	protected function renderCategoryMenuItemHtml($category, $menuDepth, $level = 0, $isWide = false)
 	{		
 		if (!$category->getIsActive() || $category->getData('wdph_megamenu_hide_item') || (intval($menuDepth) && $menuDepth <= $level))
 		{
             return '';
         }
 		$html = '';
-		$additionalLiClasses = '';
-		$catDropDownType = $category->getData('wdph_megamenu_dropdown_type');
+		$additionalLiClasses = '';		
+		$dataAttr = '';
+		$dataAttr .= htmlspecialchars(json_encode(['wdph_megamenu_item_hover_c' => trim($category->getData('wdph_megamenu_item_hover_c')),
+						'wdph_megamenu_drop_back_c' => trim($category->getData('wdph_megamenu_drop_back_c')),
+						'wdph_megamenu_font_color' => trim($category->getData('wdph_megamenu_font_color')),
+						'wdph_megamenu_font_hcolor' => trim($category->getData('wdph_megamenu_font_hcolor'))]), ENT_QUOTES, 'UTF-8');
+		$catDropDownType = '';		
+		if($level > 0)
+		{
+			$catDropDownType = 'classic';
+		}
+		else
+		{
+			$catDropDownType = $category->getData('wdph_megamenu_dropdown_type');
+			$catDropDownType = ($catDropDownType ? $catDropDownType : $this->megamenuHelper->getConfig('general/menu_type'));
+			if($catDropDownType == 'staticwidth')
+			{
+				$additionalLiClasses .= ' wdph-dropdown-type-fullwidth';
+			}
+			else
+			{
+				$additionalLiClasses .= ' wdph-dropdown-type-' . $catDropDownType;
+			}
+		}				
 		$catAddLabel = $category->getData('wdph_megamenu_cat_label');
 		if($catAddLabel)
 		{
 			$catAddLabel = '<span class="wdph-megamenu-item-add-label">' . $this->megamenuHelper->getConfig('general/' . $catAddLabel) . '</span>';
-		}			
-		$additionalLiClasses .= ' wdph-dropdown-type-' . ($catDropDownType ? $catDropDownType : $this->megamenuHelper->getConfig('general/menu_type'));
+		}		
 		$additionalLiClasses .= ($category->getData('wdph_megamenu_float') ? ' wdph-item-float-' . $category->getData('wdph_megamenu_float') : '');
-		$html .= '<li class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . '"><a class="item-link" href="' .
+		$html .= '<li class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . '" addata="' . $dataAttr . '"><a class="item-link" href="' .
 					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
 					'"><span class="wdph-megamenu-item-label">' . $this->escapeHtml($category->getName()) . '</span>' . $catAddLabel . '</a>';
 		if ($this->flatState->isFlatEnabled())
@@ -90,8 +111,8 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			$dropdownBottomBlock = '';
 			$dropdownLeftBlock = '';
 			$dropdownRightBlock = '';
-			if($catDropDownType != 'classic' && $level == 0)
-			{				
+			if(($catDropDownType == 'fullwidth' || $catDropDownType == 'staticwidth') && $level == 0)
+			{			
 				$dropdownTopBlock = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_top_block_con');
 				if($dropdownTopBlock)
 				{
@@ -113,13 +134,19 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 					$dropdownRightBlock = '<div class="wdph_megamenu-dropdown-right"' . (trim($category->getData('wdph_megamenu_left_block_w')) ? ' style="width:"' . $category->getData('wdph_megamenu_right_block_w') . ';"' : '') . '>' . $dropdownRightBlock . '</div>';
 				}
 			}
-			$html .= '<div class="wdph-megamenu-submenu level' . $level . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="">';
+			$subMenuStyles = '';
+			if($catDropDownType == 'staticwidth' && $level == 0)
+			{
+				$staticWidth = ($category->getData('wdph_megamenu_static_width') ? $category->getData('wdph_megamenu_static_width') : $this->megamenuHelper->getConfig('general/static_width'));
+				$subMenuStyles .= ' width: ' . $staticWidth . ';';
+			}
+			$html .= '<div class="wdph-megamenu-submenu level' . $level . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="">';
 			foreach ($children as $child)
 			{
-				$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $level + 1);
+				$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $level + 1, $isWide);
 			}
 			$html .= '</ul>' . $dropdownBottomBlock . $dropdownRightBlock . '</div>';
-		}
+		}		
 		$html .= '</li>';
 		return $html;
 	}
