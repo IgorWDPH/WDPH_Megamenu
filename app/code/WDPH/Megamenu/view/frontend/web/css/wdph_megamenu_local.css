@@ -12,10 +12,11 @@
 .wdph-megamenu-container .wdph_megamenu-dropdown-bottom { clear: both; width: 100%; }
 
 /*Wide Menu BEGIN*/
-.wdph-megamenu-container .wdph-megamenu-submenu { display: none; }
-.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 .wdph-megamenu-submenu.level0 { position: absolute; left: 0; width: 100%; background-color: #fff; z-index: 99999 }
+.wdph-megamenu-container .wdph-megamenu-submenu { display: none; background-color: #fff; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 .wdph-megamenu-submenu.level0 { position: absolute; left: 0; width: 100%; z-index: 99999 }
 .wdph-megamenu-container .wdph-megamenu-submenu.visible { display: block; }
 .wdph-megamenu-container .wdph-dropdown-type-fullwidth .wdph-megamenu-submenu.visible .wdph-megamenu-submenu { display: block; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-dropdown-type-fullwidth .wdph-megamenu-submenu { background-color: inherit; }
 .wdph-megamenu-container .wdph-dropdown-type-fullwidth li.level-1 { float: left; width: 25%; }
 .wdph-megamenu-container .wdph-dropdown-type-fullwidth li.level-1:nth-child(4n+1) { clear: both; }
 /*Wide Menu END*/

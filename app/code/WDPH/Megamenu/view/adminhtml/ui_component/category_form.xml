@@ -231,6 +231,7 @@
                     <item name="notice" xsi:type="string" translate="true">Allowed file types: jpeg, gif, png.</item>
                     <item name="maxFileSize" xsi:type="number">2097152</item>
                     <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png svg</item>
+					<item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
                     <item name="uploaderConfig" xsi:type="array">
                         <item name="url" xsi:type="string">catalog/category_image/upload</item>
                     </item>

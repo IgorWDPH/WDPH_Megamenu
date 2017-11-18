@@ -3,6 +3,7 @@
 .wdph-megamenu-container .wdph-megamenu-navigation-container { font-family: <?php echo $this->getMainFont(); ?>; }
 .wdph-megamenu-container ul.wdph-megamenu { background-color: <?php echo $this->megamenuHelper->getConfig('appearance/background_color'); ?>; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container a, .wdph-megamenu-container .wdph-megamenu-navigation-container a:visited { color: <?php echo $this->megamenuHelper->getConfig('appearance/font_color'); ?>; }
-.wdph-megamenu-container .wdph-megamenu-navigation-container a:hover { color: <?php echo $this->megamenuHelper->getConfig('appearance/font_hover_color'); ?>; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li.visible>a { color: <?php echo $this->megamenuHelper->getConfig('appearance/font_hover_color'); ?>; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0:hover { background-color: <?php echo $this->megamenuHelper->getConfig('appearance/item_hover_color'); ?>; }
+.wdph-megamenu-container .wdph-megamenu-submenu { background-color: <?php echo $this->megamenuHelper->getConfig('appearance/dropdown_background_color'); ?>; }
 </style>
