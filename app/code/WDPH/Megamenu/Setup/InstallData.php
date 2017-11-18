@@ -143,6 +143,15 @@ class InstallData implements InstallDataInterface
             'group'    	=> 'WDPH Megamenu',
         ]);
 		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_item_back_c', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Item Background Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_item_hover_c', [
             'type' 		=> 'varchar',
             'label'    	=> 'Item Hover Background Color',

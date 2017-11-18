@@ -13,6 +13,7 @@
         <attribute name="wdph_megamenu_left_block_w" />
         <attribute name="wdph_megamenu_right_block_cont" />
 		<attribute name="wdph_megamenu_right_block_w" />
+		<attribute name="wdph_megamenu_item_back_c" />
 		<attribute name="wdph_megamenu_item_hover_c" />
 		<attribute name="wdph_megamenu_drop_back_c" />
 		<attribute name="wdph_megamenu_drop_back_i" />

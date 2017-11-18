@@ -146,10 +146,25 @@
                 </item>
             </argument>			
         </field>
-		<field name="wdph_megamenu_item_hover_c">
+		<field name="wdph_megamenu_item_back_c">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">130</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Item Background Color</item>
+                </item>
+            </argument>
+			<settings>
+				<additionalClasses>
+					<class name="wdph-color-picker">true</class>
+				</additionalClasses>				
+			</settings>
+        </field>
+		<field name="wdph_megamenu_item_hover_c">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">140</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Item Hover Background Color</item>					
@@ -164,7 +179,7 @@
 		<field name="wdph_megamenu_drop_back_c">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">140</item>
+                    <item name="sortOrder" xsi:type="number">150</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Dropdown Background Color</item>					
@@ -179,7 +194,7 @@
 		<field name="wdph_megamenu_font_color">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">150</item>
+                    <item name="sortOrder" xsi:type="number">160</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Font Color</item>					
@@ -194,7 +209,7 @@
 		<field name="wdph_megamenu_font_hcolor">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="sortOrder" xsi:type="number">160</item>
+                    <item name="sortOrder" xsi:type="number">170</item>
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="label" xsi:type="string" translate="true">Hover Font Color</item>					
@@ -209,7 +224,7 @@
 		<field name="wdph_megamenu_drop_back_i">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-					<item name="sortOrder" xsi:type="number">170</item>
+					<item name="sortOrder" xsi:type="number">180</item>
                     <item name="label" xsi:type="string" translate="true">Dropdown Background Image</item>
                     <item name="formElement" xsi:type="string">fileUploader</item>
                     <item name="componentType" xsi:type="string">fileUploader</item>
