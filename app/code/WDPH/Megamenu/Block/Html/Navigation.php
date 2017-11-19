@@ -121,6 +121,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			$dropdownLeftBlock = '';
 			$dropdownRightBlock = '';
 			$subMenuStyles = '';
+			$subMenuClass = '';
 			if(!$sidebar)
 			{
 				if(($catDropDownType == 'fullwidth' || $catDropDownType == 'staticwidth') && $level == 0)
@@ -145,14 +146,15 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 					{
 						$dropdownRightBlock = '<div class="wdph_megamenu-dropdown-right"' . (trim($category->getData('wdph_megamenu_left_block_w')) ? ' style="width:"' . $category->getData('wdph_megamenu_right_block_w') . ';"' : '') . '>' . $dropdownRightBlock . '</div>';
 					}
+					$subMenuClass .= ' ' . ($this->megamenuHelper->getConfig('appearance/submenu_columns') ? $this->megamenuHelper->getConfig('appearance/submenu_columns') : 'columns-four');
 				}				
 				if($catDropDownType == 'staticwidth' && $level == 0)
 				{
 					$staticWidth = (trim($category->getData('wdph_megamenu_static_width')) ? trim($category->getData('wdph_megamenu_static_width')) : trim($this->megamenuHelper->getConfig('general/static_width')));
 					$subMenuStyles .= ' width: ' . $staticWidth . ';';
-				}
-			}
-			$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="">';
+				}				
+			}			
+			$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="">';
 			foreach ($children as $child)
 			{
 				$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);

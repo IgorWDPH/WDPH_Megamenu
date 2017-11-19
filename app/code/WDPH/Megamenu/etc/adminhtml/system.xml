@@ -57,61 +57,97 @@
                 </field>
 			</group>
 			<group id="appearance" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-				<label>Megamenu Appearance</label>				
-				<field id="google_font" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Megamenu Appearance</label>
+				<field id="header_general" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>                    
+                </field>
+				<field id="google_font" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Megamenu Font</label>
                     <source_model>WDPH\Megamenu\Model\Config\Font</source_model>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Font</frontend_model>
-                </field>
-				<field id="level0_font_size" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Level 0 Items Font Size</label>
-                    <comment>eg: 16px</comment>                    
-                </field>
-				<field id="level0_font_weight" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Level 0 Items Font Weight</label>
-                    <comment>eg: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder, inherit, initial, lighter, normal, unset</comment>                    
-                </field>
-				<field id="background_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                </field>				
+				<field id="background_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Top Menu Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="item_hover_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="item_hover_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Top Menu Item Hover Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="font_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="font_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Top Menu Item Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="font_hover_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="font_hover_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Top Menu Item Hover Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="dropdown_background_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="dropdown_background_color" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Top Menu Dropdown Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>				
+				<field id="header_level0" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 0 Items</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>                    
                 </field>
-				<field id="label1_font_color" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="level0_font_size" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 0 Items Font Size</label>
+                    <comment>eg: 16px</comment>                    
+                </field>
+				<field id="level0_font_weight" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 0 Items Font Weight</label>
+                    <comment>eg: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder, inherit, initial, lighter, normal, unset</comment>                    
+                </field>
+				<field id="header_fullwidth" translate="label comment" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Full Width Dropdown</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>                   
+                </field>
+				<field id="submenu_columns" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Submenu Columns</label>
+                    <source_model>WDPH\Megamenu\Model\Config\Submenucolumns</source_model>
+                </field>
+				<field id="fullwidth_level1_font_size" translate="label comment" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 1 Items Font Size</label>
+                    <comment>eg: 16px</comment>                    
+                </field>
+				<field id="fullwidth_level1_font_weight" translate="label comment" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 1 Items Font Weight</label>
+                    <comment>eg: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder, inherit, initial, lighter, normal, unset</comment>                    
+                </field>
+				<field id="fullwidth_level2_font_size" translate="label comment" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 2+ Items Font Size</label>
+                    <comment>eg: 16px</comment>                    
+                </field>
+				<field id="fullwidth_level2_font_weight" translate="label comment" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Level 2+ Items Font Weight</label>
+                    <comment>eg: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder, inherit, initial, lighter, normal, unset</comment>                    
+                </field>
+				<field id="header_labels" translate="label comment" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Labels</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>                    
+                </field>
+				<field id="label1_font_color" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 1 Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label1_background_color" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label1_background_color" translate="label comment" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 1 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label2_font_color" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label2_font_color" translate="label comment" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 2 Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label2_background_color" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label2_background_color" translate="label comment" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 2 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label3_font_color" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label3_font_color" translate="label comment" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 3 Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label3_background_color" translate="label comment" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label3_background_color" translate="label comment" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 3 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
