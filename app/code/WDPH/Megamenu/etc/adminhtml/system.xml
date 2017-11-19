@@ -83,6 +83,30 @@
                     <label>Top Menu Dropdown Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
+				<field id="label1_font_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label 1 Font Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="label1_background_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label 1 Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="label2_font_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label 2 Font Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="label2_background_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label 2 Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="label3_font_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label 3 Font Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="label3_background_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label 3 Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
 			</group>
 		</section>
 	</system>
