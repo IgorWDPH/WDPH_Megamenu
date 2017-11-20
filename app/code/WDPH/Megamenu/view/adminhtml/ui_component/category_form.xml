@@ -116,14 +116,15 @@
 		</field>		
 		<field name="wdph_megamenu_left_block_w">
             <argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Blockwidth</item>
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">100</item>
                     <item name="dataType" xsi:type="string">string</item>
-                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="formElement" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Left Block Width</item>
                 </item>
             </argument>
-        </field>
+        </field>		
 		<field name="wdph_megamenu_right_block_cont">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
@@ -138,10 +139,11 @@
 		</field>		
 		<field name="wdph_megamenu_right_block_w">
             <argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">WDPH\Megamenu\Model\Attribute\Blockwidth</item>
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">120</item>
                     <item name="dataType" xsi:type="string">string</item>
-                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="formElement" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Right Block Width</item>
                 </item>
             </argument>			

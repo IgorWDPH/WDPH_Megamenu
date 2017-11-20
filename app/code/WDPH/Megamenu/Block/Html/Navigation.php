@@ -122,30 +122,37 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			$dropdownRightBlock = '';
 			$subMenuStyles = '';
 			$subMenuClass = '';
+			$subMenuUlStyles = '';
 			if(!$sidebar)
 			{
 				if(($catDropDownType == 'fullwidth' || $catDropDownType == 'staticwidth') && $level == 0)
-				{			
-					$dropdownTopBlock = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_top_block_con');
-					if($dropdownTopBlock)
+				{
+					$ulWidth = 100;					
+					$blockCont = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_top_block_con');
+					if($blockCont)
 					{
-						$dropdownTopBlock = '<div class="wdph_megamenu-dropdown-top">' . $dropdownTopBlock . '</div>';
+						$dropdownTopBlock = '<div class="wdph_megamenu-dropdown-top">' . $blockCont . '</div>';
 					}
-					$dropdownBottomBlock = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_bot_block_cont');
-					if($dropdownBottomBlock)
+					$blockCont = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_bot_block_cont');
+					if($blockCont)
 					{
-						$dropdownBottomBlock = '<div class="wdph_megamenu-dropdown-bottom">' . $dropdownBottomBlock . '</div>';
+						$dropdownBottomBlock = '<div class="wdph_megamenu-dropdown-bottom">' . $blockCont . '</div>';
 					}
-					$dropdownLeftBlock = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_left_block_cont');
-					if($dropdownLeftBlock)
+					$blockCont = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_left_block_cont');
+					$blockWidth = $category->getData('wdph_megamenu_left_block_w');
+					if($blockCont && $blockWidth)
 					{
-						$dropdownLeftBlock = '<div class="wdph_megamenu-dropdown-left"' . (trim($category->getData('wdph_megamenu_left_block_w')) ? ' style="width:"' . $category->getData('wdph_megamenu_left_block_w') . ';"' : '') . '>' . $dropdownLeftBlock . '</div>';
+						$ulWidth -= $blockWidth;
+						$dropdownLeftBlock = '<div class="wdph_megamenu-dropdown-left"' . ($blockWidth ? " style=\"width: $blockWidth%;\" " : '') . '>' . $blockCont . '</div>';
 					}
-					$dropdownRightBlock = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_right_block_cont');
-					if($dropdownRightBlock)
+					$blockCont = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_right_block_cont');
+					$blockWidth = $category->getData('wdph_megamenu_right_block_w');
+					if($blockCont && $blockWidth)
 					{
-						$dropdownRightBlock = '<div class="wdph_megamenu-dropdown-right"' . (trim($category->getData('wdph_megamenu_left_block_w')) ? ' style="width:"' . $category->getData('wdph_megamenu_right_block_w') . ';"' : '') . '>' . $dropdownRightBlock . '</div>';
+						$ulWidth -= $blockWidth;
+						$dropdownRightBlock = '<div class="wdph_megamenu-dropdown-right"' . ($blockWidth ? " style=\"width: $blockWidth%;\" " : '') . '>' . $blockCont . '</div>';
 					}
+					$subMenuUlStyles = " width: $ulWidth%;";
 					$subMenuClass .= ' ' . ($this->megamenuHelper->getConfig('appearance/submenu_columns') ? $this->megamenuHelper->getConfig('appearance/submenu_columns') : 'columns-four');
 				}				
 				if($catDropDownType == 'staticwidth' && $level == 0)
@@ -154,12 +161,12 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 					$subMenuStyles .= ' width: ' . $staticWidth . ';';
 				}				
 			}			
-			$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="">';
+			$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="" style="' . $subMenuUlStyles . '">';
 			foreach ($children as $child)
 			{
 				$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);
 			}
-			$html .= '</ul>' . $dropdownBottomBlock . $dropdownRightBlock . '</div>';
+			$html .= '</ul>' . $dropdownRightBlock . $dropdownBottomBlock . '</div>';
 		}		
 		$html .= '</li>';
 		return $html;
