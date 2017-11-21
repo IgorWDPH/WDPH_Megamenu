@@ -15,6 +15,8 @@
 .wdph-megamenu-container .wdph_megamenu-dropdown-bottom { float: left; clear: both; width: 100%; }
 .wdph-megamenu-container .wdph_megamenu-dropdown-left { float: left; }
 .wdph-megamenu-container .wdph_megamenu-dropdown-right { float: left; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li>a.item-link { position: relative; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li .wdph-megamenu-item-add-label { position: absolute; text-transform: uppercase; font: inherit; font-size: 9px; padding: 2px; border-radius: 2px; line-height: 1; color: #000; top: 0; right: 0; }
 .wdph-megamenu-container .wdph-megamenu-submenu { display: none; background-color: #fff; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 .wdph-megamenu-submenu.level0 { position: absolute; left: 0; width: 100%; z-index: 99999 }
 .wdph-megamenu-container .wdph-megamenu-submenu.visible { display: block; }

@@ -99,7 +99,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		$catAddLabel = $category->getData('wdph_megamenu_cat_label');
 		if($catAddLabel)
 		{
-			$catAddLabel = '<span class="wdph-megamenu-item-add-label">' . $this->megamenuHelper->getConfig('general/' . $catAddLabel) . '</span>';
+			$catAddLabel = '<span class="wdph-megamenu-item-add-label ' . $catAddLabel . '">' . $this->megamenuHelper->getConfig('general/' . $catAddLabel) . '</span>';
 		}		
 		$html .= '<li id="wdph-megamenu-category-' . $categoryId . '" class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . $sidebarClass . '"><a class="item-link" href="' .
 					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
