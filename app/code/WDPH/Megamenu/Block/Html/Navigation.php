@@ -142,17 +142,26 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 					$blockWidth = $category->getData('wdph_megamenu_left_block_w');
 					if($blockCont && $blockWidth)
 					{
-						$ulWidth -= $blockWidth;
+						if(!$category->getData('wdph_megamenu_show_sub'))
+						{
+							$ulWidth -= $blockWidth;
+						}						
 						$dropdownLeftBlock = '<div class="wdph_megamenu-dropdown-left"' . ($blockWidth ? " style=\"width: $blockWidth%;\" " : '') . '>' . $blockCont . '</div>';
 					}
 					$blockCont = $this->getCategoryDropdownAdditionalContent($category, 'wdph_megamenu_right_block_cont');
 					$blockWidth = $category->getData('wdph_megamenu_right_block_w');
 					if($blockCont && $blockWidth)
 					{
-						$ulWidth -= $blockWidth;
+						if(!$category->getData('wdph_megamenu_show_sub'))
+						{
+							$ulWidth -= $blockWidth;
+						}
 						$dropdownRightBlock = '<div class="wdph_megamenu-dropdown-right"' . ($blockWidth ? " style=\"width: $blockWidth%;\" " : '') . '>' . $blockCont . '</div>';
 					}
-					$subMenuUlStyles = " width: $ulWidth%;";
+					if($category->getData('wdph_megamenu_show_sub'))
+					{
+						$subMenuUlStyles = " width: $ulWidth%;";
+					}
 					$subMenuClass .= ' ' . ($this->megamenuHelper->getConfig('appearance/submenu_columns') ? $this->megamenuHelper->getConfig('appearance/submenu_columns') : 'columns-four');
 				}				
 				if($catDropDownType == 'staticwidth' && $level == 0)
@@ -160,13 +169,16 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 					$staticWidth = (trim($category->getData('wdph_megamenu_static_width')) ? trim($category->getData('wdph_megamenu_static_width')) : trim($this->megamenuHelper->getConfig('general/static_width')));
 					$subMenuStyles .= ' width: ' . $staticWidth . ';';
 				}				
-			}			
-			$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="" style="' . $subMenuUlStyles . '">';
-			foreach ($children as $child)
-			{
-				$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);
 			}
-			$html .= '</ul>' . $dropdownRightBlock . $dropdownBottomBlock . '</div>';
+			if(!$category->getData('wdph_megamenu_show_sub'))
+			{
+				$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="" style="' . $subMenuUlStyles . '">';
+				foreach ($children as $child)
+				{
+					$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);
+				}
+				$html .= '</ul>' . $dropdownRightBlock . $dropdownBottomBlock . '</div>';
+			}
 		}		
 		$html .= '</li>';
 		return $html;
@@ -178,13 +190,15 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		if(trim($category->getData('wdph_megamenu_font_color')))
 		{
 			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . trim($category->getData('wdph_megamenu_font_color')) . '; }';
-		}
-		$catStyle = trim($category->getData('wdph_megamenu_font_hcolor'));
-		if(!$catStyle)
+		}		
+		if(trim($category->getData('wdph_megamenu_font_hcolor')))
 		{
-			$catStyle = $this->megamenuHelper->getConfig('appearance/fullwidth_level2_font_hover_color');
+			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . trim($category->getData('wdph_megamenu_font_hcolor')) . '; }';			
 		}
-		$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . $catStyle . '; }';
+		else
+		{
+			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: inherit; }';
+		}
 		if(trim($category->getData('wdph_megamenu_item_back_c')))
 		{
 			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { background-color: ' . trim($category->getData('wdph_megamenu_item_back_c')) . '; }';
@@ -207,7 +221,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 	{
 		if($this->megamenuHelper->getConfig('general/home'))
 		{
-			return '<li class="wdph-megamenu-item level-0"><a class="item-link" href="' . $this->storeManager->getStore()->getBaseUrl() . '"><span class="wdph-megamenu-item-label">' . __('Home') . '</span></a></li>';
+			return '<li class="wdph-megamenu-item level-0 home"><a class="item-link" href="' . $this->storeManager->getStore()->getBaseUrl() . '"><span class="wdph-megamenu-item-label">' . __('Home') . '</span></a></li>';
 		}
 		return '';
 	}
