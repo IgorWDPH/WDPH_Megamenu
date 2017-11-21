@@ -33,7 +33,7 @@ class InstallData implements InstallDataInterface
             'group'    	=> 'WDPH Megamenu',
         ]);
 		
-		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_show_sub', [
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_hide_sub', [
             'type'		=> 'int',
             'label'    	=> 'Show Sub-Categories',
             'input'    	=> 'boolean',

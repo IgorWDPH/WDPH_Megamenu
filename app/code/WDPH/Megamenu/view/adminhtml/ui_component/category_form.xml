@@ -24,7 +24,7 @@
                 </item>
             </argument>
         </field>
-		<field name="wdph_megamenu_show_sub">
+		<field name="wdph_megamenu_hide_sub">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">20</item>

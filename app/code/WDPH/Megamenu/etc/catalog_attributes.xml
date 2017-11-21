@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/catalog_attributes.xsd">
     <group name="catalog_category">
         <attribute name="wdph_megamenu_hide_item" />
-		<attribute name="wdph_megamenu_show_sub" />
+		<attribute name="wdph_megamenu_hide_sub" />
         <attribute name="wdph_megamenu_dropdown_type" />
 		<attribute name="wdph_megamenu_static_width" />
         <attribute name="wdph_megamenu_item_url" />
