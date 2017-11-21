@@ -178,11 +178,13 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		if(trim($category->getData('wdph_megamenu_font_color')))
 		{
 			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . trim($category->getData('wdph_megamenu_font_color')) . '; }';
-		}		
-		if(trim($category->getData('wdph_megamenu_font_hcolor')))
+		}
+		$catStyle = trim($category->getData('wdph_megamenu_font_hcolor'));
+		if(!$catStyle)
 		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . trim($category->getData('wdph_megamenu_font_hcolor')) . '; }';
-		}		
+			$catStyle = $this->megamenuHelper->getConfig('appearance/fullwidth_level2_font_hover_color');
+		}
+		$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . $catStyle . '; }';
 		if(trim($category->getData('wdph_megamenu_item_back_c')))
 		{
 			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { background-color: ' . trim($category->getData('wdph_megamenu_item_back_c')) . '; }';
