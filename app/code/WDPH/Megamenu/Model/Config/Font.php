@@ -3,7 +3,7 @@ namespace WDPH\Megamenu\Model\Config;
 
 class Font implements \Magento\Framework\Option\ArrayInterface
 {
-	private $googleFonts = array('', 'ABeeZee', 'Abel', 'Abril Fatface', 'Aclonica', 'Acme', 'Actor', 'Adamina', 'Advent Pro',
+	private $googleFonts = array('NONE', 'ABeeZee', 'Abel', 'Abril Fatface', 'Aclonica', 'Acme', 'Actor', 'Adamina', 'Advent Pro',
 							'Aguafina Script', 'Akronim', 'Aladin', 'Aldrich', 'Alegreya', 'Alegreya SC', 'Alex Brush',
 							'Alfa Slab One', 'Alice', 'Alike', 'Alike Angular', 'Allan', 'Allerta', 'Allerta Stencil',
 							'Allura', 'Almendra', 'Almendra SC', 'Amarante', 'Amaranth', 'Amatic SC', 'Amethysta',

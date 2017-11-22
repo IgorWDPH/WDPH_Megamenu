@@ -7,10 +7,7 @@ require(["jquery"], function ($)
 			if($(this).find(">.wdph-megamenu-submenu").length)
 			{
 				var subMenu = $(this).find(">.wdph-megamenu-submenu");
-				subMenu.addClass('visible');
-				console.log($(this).attr('id') + ':');
-				console.log(parseInt(subMenu.outerWidth()) + parseInt(subMenu.offset().left));
-				console.log($(window).width());
+				subMenu.addClass('visible');				
 				if(parseInt(subMenu.outerWidth()) + parseInt(subMenu.offset().left) > $(window).width())
 				{
 					console.log('yes');
