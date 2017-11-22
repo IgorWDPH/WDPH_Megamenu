@@ -32,26 +32,30 @@
                     </depends>
                 </field>				
 				<field id="visible_menu_depth" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Visible Menu Depth</label>
+                    <label>Top Menu Visible Depth</label>
                     <comment>1, 2, 3, 4. 0 or empty - disable limits.</comment>
                 </field>
-				<field id="label1" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="sidebar_visible_menu_depth" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sidebar Menu Visible Depth</label>
+                    <comment>1, 2, 3, 4. 0 or empty - disable limits.</comment>
+                </field>
+				<field id="label1" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 1</label>
                     <comment>You can set lebel for some category.</comment>
                 </field>
-                <field id="label2" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="label2" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 2</label>
                     <comment>You can set lebel for some category.</comment>
                 </field>
-                <field id="label3" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="label3" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 3</label>
                     <comment>You can set lebel for some category.</comment>
                 </field>
-				<field id="staticblock_before" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="staticblock_before" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Static Block Before Top Nav</label>
                     <comment>This block will be shown before top navigation menu.</comment>
                 </field>
-                <field id="staticblock_after" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="staticblock_after" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Static Block After Top Nav</label>
                     <comment>This block will be shown after top navigation menu.</comment>
                 </field>

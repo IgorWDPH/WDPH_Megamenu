@@ -41,7 +41,14 @@ class Navigation extends \Magento\Catalog\Block\Navigation
                 $activeCategories[] = $child;
             }
         }
-		$menuDepth = $this->megamenuHelper->getConfig('general/visible_menu_depth');
+		if(!$sidebar)
+		{
+			$menuDepth = $this->megamenuHelper->getConfig('general/visible_menu_depth');
+		}
+		else
+		{
+			$menuDepth = $this->megamenuHelper->getConfig('general/sidebar_visible_menu_depth');
+		}
 		$html = '';
 		$this->categoriesCustomStyles = '<style type="text/css">';
 		$html .= $this->renderHomeItem();

@@ -5,7 +5,7 @@ if($gFont != 'NONE'): ?>
 <?php endif; ?>
 <style type="text/css">
 <?php if($gFont != 'NONE'): ?>
-.wdph-megamenu-container .wdph-megamenu-navigation-container { font-family: <?php echo $gFont; ?>; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container, .wdph-megamenu-sidebar-navigation { font-family: <?php echo $gFont; ?>; }
 <?php endif; ?>
 .wdph-megamenu-container ul.wdph-megamenu { background-color: <?php echo $this->megamenuHelper->getConfig('appearance/background_color'); ?>; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li { color: <?php echo $this->megamenuHelper->getConfig('appearance/font_color'); ?>; }
