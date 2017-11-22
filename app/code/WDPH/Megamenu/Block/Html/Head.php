@@ -36,11 +36,18 @@ class Head extends \Magento\Framework\View\Element\Template
 		?>
 		<?php if ( !empty($fontsToLoad) ) : ?>
 			<link href='//fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', implode('|', $fontsToLoad) ); ?>' rel='stylesheet' type='text/css'>
-		<?php endif; ?>*/
-		if($this->megamenuHelper->getConfig('appearance/google_font'))
-		{			
-			return $this->megamenuHelper->getConfig('appearance/google_font');
-		}
+		<?php endif; ?>*/		
+		return $this->megamenuHelper->getConfig('appearance/google_font');		
+	}
+	
+	public function getCustomCss()
+	{
+		return trim($this->megamenuHelper->getConfig('appearance/custom_styles'));
+	}
+	
+	public function getCustomJs()
+	{
+		return trim($this->megamenuHelper->getConfig('appearance/custom_js'));
 	}
 }
 ?>

@@ -209,6 +209,14 @@
                     <label>Label 3 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
+				<field id="custom_styles" translate="label comment" type="textarea" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Styles</label>
+                    <comment><![CDATA[For custom styles , e.g.:<br/><em>&nbsp;&nbsp;&nbsp;&nbsp;.wdph-megamenu-container ul.wdph-megamenu { padding: 0; }</em>]]></comment>					
+                </field>
+				<field id="custom_js" translate="label comment" type="textarea" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom JS</label>
+                    <comment><![CDATA[For custom JS]]></comment>                    
+                </field>
 			</group>
 		</section>
 	</system>

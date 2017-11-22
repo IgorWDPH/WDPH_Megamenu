@@ -9,8 +9,7 @@ require(["jquery"], function ($)
 				var subMenu = $(this).find(">.wdph-megamenu-submenu");
 				subMenu.addClass('visible');				
 				if(parseInt(subMenu.outerWidth()) + parseInt(subMenu.offset().left) > $(window).width())
-				{
-					console.log('yes');
+				{					
 					subMenu.addClass('right');
 				}
 				subMenu.css('visibility', 'visible');	
