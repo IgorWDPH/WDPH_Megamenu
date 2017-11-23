@@ -58,6 +58,7 @@
 .wdph-megamenu-sidebar-navigation li.wdph-megamenu-item ul.wdph-megamenu { padding-left: 0px; }
 .wdph-megamenu-sidebar-navigation li.wdph-megamenu-item.sidebar .toggle-minus, .wdph-megamenu-sidebar-navigation li.wdph-megamenu-item.sidebar .toggle-plus { cursor: pointer; float: right; }
 .wdph-megamenu-sidebar-navigation li.wdph-megamenu-item.sidebar .toggle-minus { display: none; }
+.wdph-megamenu-sidebar-navigation li.wdph-megamenu-item a.item-link { padding: 5px; }
 /*Sidebar menu END*/
 
 /*TOP NAVIGATION END*/

@@ -184,40 +184,72 @@
 				<field id="classic_items_font_hover_color" translate="label comment" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Items Font Hover Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>				
+				<field id="header_sidebar" translate="label comment" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sidebar Navigation</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>                    
                 </field>
-				<field id="header_labels" translate="label comment" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="sidebar_items_font_size" translate="label comment" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Font Size</label>
+                    <comment>eg: 16px</comment>
+                </field>
+				<field id="sidebar_items_font_weight" translate="label comment" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Font Weight</label>
+                    <comment>eg: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder, inherit, initial, lighter, normal, unset</comment>                    
+                </field>
+				<field id="sidebar_back_color" translate="label comment" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="sidebar_item_font_color" translate="label comment" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Font Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="sidebar_item_font_hover_color" translate="label comment" type="text" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Font Hover Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="sidebar_item_back_color" translate="label comment" type="text" sortOrder="390" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Background Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>
+				<field id="sidebar_item_back_hover_color" translate="label comment" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Background Hover Color</label>
+					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
+                </field>				
+				<field id="header_labels" translate="label comment" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Labels</label>
                     <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>                    
                 </field>
-				<field id="label1_font_color" translate="label comment" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label1_font_color" translate="label comment" type="text" sortOrder="420" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 1 Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label1_background_color" translate="label comment" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label1_background_color" translate="label comment" type="text" sortOrder="430" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 1 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label2_font_color" translate="label comment" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label2_font_color" translate="label comment" type="text" sortOrder="440" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 2 Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label2_background_color" translate="label comment" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label2_background_color" translate="label comment" type="text" sortOrder="450" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 2 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label3_font_color" translate="label comment" type="text" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label3_font_color" translate="label comment" type="text" sortOrder="460" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 3 Font Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="label3_background_color" translate="label comment" type="text" sortOrder="390" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="label3_background_color" translate="label comment" type="text" sortOrder="470" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label 3 Background Color</label>
 					<frontend_model>WDPH\Megamenu\Block\System\Config\Color</frontend_model>
                 </field>
-				<field id="custom_styles" translate="label comment" type="textarea" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="custom_styles" translate="label comment" type="textarea" sortOrder="480" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Custom Styles</label>
                     <comment><![CDATA[For custom styles , e.g.:<br/><em>&nbsp;&nbsp;&nbsp;&nbsp;.wdph-megamenu-container ul.wdph-megamenu { padding: 0; }</em>]]></comment>					
                 </field>
-				<field id="custom_js" translate="label comment" type="textarea" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="custom_js" translate="label comment" type="textarea" sortOrder="490" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Custom JS</label>
                     <comment><![CDATA[For custom JS]]></comment>                    
                 </field>
