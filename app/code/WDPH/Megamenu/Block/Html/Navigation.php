@@ -121,7 +121,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
             $children = $category->getChildren();   
 			$childrenCount = $children->count();			
         }
-		if($childrenCount && (!intval($menuDepth) || (intval($menuDepth) && $menuDepth > $level + 1)))
+		if(!intval($menuDepth) || (intval($menuDepth) && $menuDepth > $level + 1))
 		{
 			$dropdownTopBlock = '';
 			$dropdownBottomBlock = '';
@@ -177,12 +177,15 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 					$subMenuStyles .= ' width: ' . $staticWidth . ';';
 				}				
 			}
-			if(!$category->getData('wdph_megamenu_show_sub'))
-			{
+			if($dropdownTopBlock || $dropdownBottomBlock || $dropdownLeftBlock || $dropdownRightBlock || $childrenCount)
+			{				
 				$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="" style="' . $subMenuUlStyles . '">';
-				foreach ($children as $child)
+				if(!$category->getData('wdph_megamenu_show_sub'))
 				{
-					$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);
+					foreach ($children as $child)
+					{
+						$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);
+					}
 				}
 				$html .= '</ul>' . $dropdownRightBlock . $dropdownBottomBlock . '</div>';
 			}
