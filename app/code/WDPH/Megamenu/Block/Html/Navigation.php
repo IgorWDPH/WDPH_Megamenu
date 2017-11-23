@@ -107,10 +107,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		if($catAddLabel)
 		{
 			$catAddLabel = '<span class="wdph-megamenu-item-add-label ' . $catAddLabel . '">' . $this->megamenuHelper->getConfig('general/' . $catAddLabel) . '</span>';
-		}		
-		$html .= '<li id="wdph-megamenu-category-' . $categoryId . '" class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . $sidebarClass . '"><a class="item-link" href="' .
-					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
-					'"><span class="wdph-megamenu-item-label">' . $this->escapeHtml($category->getName()) . '</span>' . $catAddLabel . '</a>';
+		}
 		if ($this->flatState->isFlatEnabled())
 		{			
             $children = (array)$category->getChildrenNodes();
@@ -121,6 +118,10 @@ class Navigation extends \Magento\Catalog\Block\Navigation
             $children = $category->getChildren();   
 			$childrenCount = $children->count();			
         }
+		$extenderToogle = ($sidebar && $childrenCount ? '<em class="toggle-plus" href="#">+</em><em class="toggle-minus" href="#">-</em>' : '');
+		$html .= '<li id="wdph-megamenu-category-' . $categoryId . '" class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . $sidebarClass . '">' . $extenderToogle . '<a class="item-link" href="' .
+					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
+					'"><span class="wdph-megamenu-item-label">' . $this->escapeHtml($category->getName()) . '</span>' . $catAddLabel . '</a>';		
 		if(!intval($menuDepth) || (intval($menuDepth) && $menuDepth > $level + 1))
 		{
 			$dropdownTopBlock = '';

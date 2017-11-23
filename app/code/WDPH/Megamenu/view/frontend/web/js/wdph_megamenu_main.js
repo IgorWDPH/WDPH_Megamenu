@@ -25,5 +25,19 @@ require(["jquery"], function ($)
 				subMenu.css('visibility', 'hidden');
 			}			
 		});
+		$(".wdph-megamenu-sidebar-navigation li.wdph-megamenu-item .toggle-plus").on('click', function()
+		{
+			var li = $(this).closest("li.wdph-megamenu-item");
+			$(this).css('display', 'none');
+			li.children(".toggle-minus").css('display', 'block');
+			li.children(".wdph-megamenu-submenu").css('display', 'block');
+		});
+		$(".wdph-megamenu-sidebar-navigation li.wdph-megamenu-item .toggle-minus").on('click', function()
+		{
+			var li = $(this).closest("li.wdph-megamenu-item");
+			$(this).css('display', 'none');
+			li.children(".toggle-plus").css('display', 'block');
+			li.children(".wdph-megamenu-submenu").css('display', 'none');
+		});
 	});
 });

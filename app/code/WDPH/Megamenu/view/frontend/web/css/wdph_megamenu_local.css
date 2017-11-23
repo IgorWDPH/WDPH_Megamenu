@@ -9,6 +9,7 @@
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0:hover { background-color: #fff; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-item-float-left { float: left; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0.wdph-item-float-right { float: right; }
+.wdph-megamenu-container .wdph-megamenu-navigation-container li a.item-link, .wdph-megamenu-sidebar-navigation li.level-0 a.item-link { text-decoration: none; }
 .wdph-megamenu-container .wdph-megamenu-navigation-container li.level-0 a.item-link { display: inline-block; line-height: 2.5; padding: 0 10px; text-decoration: none; }
 
 /*Wide Menu BEGIN*/
@@ -51,7 +52,12 @@
 /*Classic Menu END*/
 
 /*Sidebar menu BEGIN*/
-
+.wdph-megamenu-sidebar-navigation ul { list-style: none; padding-left: 25px; font-size: 12px; }
+.wdph-megamenu-sidebar-navigation li.wdph-megamenu-item { margin: 0; line-height: 2.5; }
+.wdph-megamenu-sidebar-navigation li.wdph-megamenu-item .wdph-megamenu-submenu { display: none; line-height: 2.5; }
+.wdph-megamenu-sidebar-navigation li.wdph-megamenu-item ul.wdph-megamenu { padding-left: 0px; }
+.wdph-megamenu-sidebar-navigation li.wdph-megamenu-item.sidebar .toggle-minus, .wdph-megamenu-sidebar-navigation li.wdph-megamenu-item.sidebar .toggle-plus { cursor: pointer; float: right; }
+.wdph-megamenu-sidebar-navigation li.wdph-megamenu-item.sidebar .toggle-minus { display: none; }
 /*Sidebar menu END*/
 
 /*TOP NAVIGATION END*/
