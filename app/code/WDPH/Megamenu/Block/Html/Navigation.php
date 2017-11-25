@@ -68,7 +68,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 	
 	protected function renderCategoryMenuItemHtml($category, $menuDepth, $sidebar, $level = 0, $isWide = false)
 	{		
-		if (!$category->getIsActive() || $category->getData('wdph_megamenu_hide_item') || (intval($menuDepth) && $menuDepth <= $level))
+		if (!$category->getIsActive() || (!$sidebar && $category->getData('wdph_megamenu_hide_item')) || ($sidebar && $category->getData('wdph_megamenu_shide_item')) || (intval($menuDepth) && $menuDepth <= $level))
 		{
             return '';
         }		
@@ -110,14 +110,21 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		}
 		if ($this->flatState->isFlatEnabled())
 		{			
-            $children = (array)$category->getChildrenNodes();
-			$childrenCount = count($children);
+            $children = (array)$category->getChildrenNodes();			
         }
 		else
 		{
-            $children = $category->getChildren();   
-			$childrenCount = $children->count();			
+            $children = $category->getChildren();						
         }
+		$activeChildren = array();
+		foreach($children as $child)
+		{
+            if ((!$sidebar && !$child->getData('wdph_megamenu_hide_item')) || ($sidebar && !$child->getData('wdph_megamenu_shide_item')))
+			{
+                $activeChildren[] = $child;
+            }
+        }
+		$childrenCount = count($activeChildren);
 		$extenderToogle = ($sidebar && $childrenCount ? '<em class="toggle-plus" href="#">+</em><em class="toggle-minus" href="#">-</em>' : '');
 		$html .= '<li id="wdph-megamenu-category-' . $categoryId . '" class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . $sidebarClass . '">' . $extenderToogle . '<a class="item-link" href="' .
 					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
@@ -183,7 +190,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 				$html .= '<div class="wdph-megamenu-submenu level' . $level . ' ' . $sidebarClass . ' ' . $subMenuClass . '" style="' . $subMenuStyles . '">' . $dropdownTopBlock . $dropdownLeftBlock . '<ul class="" style="' . $subMenuUlStyles . '">';
 				if(!$category->getData('wdph_megamenu_show_sub'))
 				{
-					foreach ($children as $child)
+					foreach ($activeChildren as $child)
 					{
 						$html .= $this->renderCategoryMenuItemHtml($child, $menuDepth, $sidebar, $level + 1, $isWide);
 					}
@@ -193,6 +200,20 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		}		
 		$html .= '</li>';
 		return $html;
+	}
+	
+	protected function getChildCategories($categories)
+	{
+		if ($this->flatState->isFlatEnabled())
+		{			
+            $children = (array)$category->getChildrenNodes();
+			$childrenCount = count($children);
+        }
+		else
+		{
+            $children = $category->getChildren();   
+			$childrenCount = $children->count();			
+        }
 	}
 	
 	protected function setCategoriesCustomStyles($category, $sidebar)

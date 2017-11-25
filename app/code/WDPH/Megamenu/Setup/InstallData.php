@@ -33,6 +33,18 @@ class InstallData implements InstallDataInterface
             'group'    	=> 'WDPH Megamenu',
         ]);
 		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_shide_item', [
+            'type'		=> 'int',
+            'label'    	=> 'Hide Menu Item',
+            'input'    	=> 'boolean',
+            'source'   	=> 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
+            'visible'  	=> true,
+            'default'  	=> '0',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_hide_sub', [
             'type'		=> 'int',
             'label'    	=> 'Show Sub-Categories',
