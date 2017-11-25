@@ -256,6 +256,66 @@
                 </item>
             </argument>
         </field>
+		<field name="wdph_megamenu_font_scol">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">200</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Sidebar Font Color</item>					
+                </item>
+            </argument>
+			<settings>
+				<additionalClasses>
+					<class name="wdph-color-picker">true</class>
+				</additionalClasses>				
+			</settings>
+        </field>
+		<field name="wdph_megamenu_font_shcol">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">210</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Sidebar Hover Font Color</item>					
+                </item>
+            </argument>
+			<settings>
+				<additionalClasses>
+					<class name="wdph-color-picker">true</class>
+				</additionalClasses>				
+			</settings>
+        </field>
+		<field name="wdph_megamenu_font_sbcol">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">220</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Sidebar Item Background Color</item>					
+                </item>
+            </argument>
+			<settings>
+				<additionalClasses>
+					<class name="wdph-color-picker">true</class>
+				</additionalClasses>				
+			</settings>
+        </field>
+		<field name="wdph_megamenu_font_shbcol">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">230</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Sidebar Hover Item Background Color</item>					
+                </item>
+            </argument>
+			<settings>
+				<additionalClasses>
+					<class name="wdph-color-picker">true</class>
+				</additionalClasses>				
+			</settings>
+        </field>		
 		<container name="wdph_megamenu_additional" >
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">

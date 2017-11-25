@@ -76,7 +76,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		$categoryId = $category->getId();
 		$additionalLiClasses = '';
 		$sidebarClass = '';		
-		$this->setCategoriesCustomStyles($category);		
+		$this->setCategoriesCustomStyles($category, $sidebar);		
 		$catDropDownType = '';
 		if(!$sidebar)
 		{
@@ -195,37 +195,63 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 		return $html;
 	}
 	
-	protected function setCategoriesCustomStyles($category)
+	protected function setCategoriesCustomStyles($category, $sidebar)
 	{		
-		$categoryId = $category->getId();		
-		if(trim($category->getData('wdph_megamenu_font_color')))
+		$categoryId = $category->getId();
+		if(!$sidebar)
 		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . trim($category->getData('wdph_megamenu_font_color')) . '; }';
+			if(trim($category->getData('wdph_megamenu_font_color')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link { color: ' . trim($category->getData('wdph_megamenu_font_color')) . '; }';
+			}		
+			if(trim($category->getData('wdph_megamenu_font_hcolor')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { color: ' . trim($category->getData('wdph_megamenu_font_hcolor')) . '; }';			
+			}
+			else
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { color: inherit; }';
+			}
+			if(trim($category->getData('wdph_megamenu_item_back_c')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { background-color: ' . trim($category->getData('wdph_megamenu_item_back_c')) . '; }';
+			}		
+			if(trim($category->getData('wdph_megamenu_item_hover_c')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { background-color: ' . trim($category->getData('wdph_megamenu_item_hover_c')) . '; }';
+			}		
+			if(trim($category->getData('wdph_megamenu_drop_back_c')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-color: ' . trim($category->getData('wdph_megamenu_drop_back_c')) . '; }';
+			}		
+			if(trim($category->getData('wdph_megamenu_drop_back_i')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-image: url(' . $this->storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/category/' . trim($category->getData('wdph_megamenu_drop_back_i')) . '); }';
+			}
 		}		
-		if(trim($category->getData('wdph_megamenu_font_hcolor')))
-		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: ' . trim($category->getData('wdph_megamenu_font_hcolor')) . '; }';			
-		}
 		else
 		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { color: inherit; }';
-		}
-		if(trim($category->getData('wdph_megamenu_item_back_c')))
-		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { background-color: ' . trim($category->getData('wdph_megamenu_item_back_c')) . '; }';
+			if(trim($category->getData('wdph_megamenu_font_scol')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link { color: ' . trim($category->getData('wdph_megamenu_font_scol')) . '; }';
+			}
+			if(trim($category->getData('wdph_megamenu_font_shcol')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link:hover { color: ' . trim($category->getData('wdph_megamenu_font_shcol')) . '; }';			
+			}
+			else
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link:hover { color: inherit; }';
+			}
+			if(trim($category->getData('wdph_megamenu_font_sbcol')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link { background-color: ' . trim($category->getData('wdph_megamenu_font_sbcol')) . '; }';
+			}
+			if(trim($category->getData('wdph_megamenu_font_shbcol')))
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link:hover { background-color: ' . trim($category->getData('wdph_megamenu_font_shbcol')) . '; }';
+			}
 		}		
-		if(trim($category->getData('wdph_megamenu_item_hover_c')))
-		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li.visible#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { background-color: ' . trim($category->getData('wdph_megamenu_item_hover_c')) . '; }';
-		}		
-		if(trim($category->getData('wdph_megamenu_drop_back_c')))
-		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-color: ' . trim($category->getData('wdph_megamenu_drop_back_c')) . '; }';
-		}		
-		if(trim($category->getData('wdph_megamenu_drop_back_i')))
-		{
-			$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-image: url(' . $this->storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/category/' . trim($category->getData('wdph_megamenu_drop_back_i')) . '); }';
-		}	
 	}
 	
 	protected function renderHomeItem()

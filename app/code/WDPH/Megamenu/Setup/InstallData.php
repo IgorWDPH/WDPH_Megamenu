@@ -200,6 +200,7 @@ class InstallData implements InstallDataInterface
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
         ]);
+		
 		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_hcolor', [
             'type' 		=> 'varchar',
             'label'    	=> 'Hover Font Color',
@@ -207,7 +208,43 @@ class InstallData implements InstallDataInterface
             'required' 	=> false,
             'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    	=> 'WDPH Megamenu',
-        ]);		
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_scol', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Sidebar Font Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_shcol', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Sidebar Hover Font Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_sbcol', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Sidebar Item Background Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
+		
+		$eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'wdph_megamenu_font_shbcol', [
+            'type' 		=> 'varchar',
+            'label'    	=> 'Sidebar Hover Item Background Color',
+            'input' 	=> 'text',
+            'required' 	=> false,
+            'global'   	=> \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    	=> 'WDPH Megamenu',
+        ]);
 		
 		$setup->endSetup();
 	}
