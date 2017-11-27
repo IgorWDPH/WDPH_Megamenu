@@ -125,7 +125,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
             }
         }
 		$childrenCount = count($activeChildren);
-		$extenderToogle = ($sidebar && $childrenCount ? '<em class="toggle-plus" href="#">+</em><em class="toggle-minus" href="#">-</em>' : '');
+		$extenderToogle = ($childrenCount ? '<em class="toggle-plus" href="#">+</em><em class="toggle-minus" href="#">-</em>' : '');
 		$html .= '<li id="wdph-megamenu-category-' . $categoryId . '" class="wdph-megamenu-item level-' . $level . ' ' . $additionalLiClasses . $sidebarClass . '">' . $extenderToogle . '<a class="item-link" href="' .
 					(trim($category->getData('wdph_megamenu_item_url')) ? trim($category->getData('wdph_megamenu_item_url')) : $this->getCategoryUrl($category)) .
 					'"><span class="wdph-megamenu-item-label">' . $this->escapeHtml($category->getName()) . '</span>' . $catAddLabel . '</a>';		
@@ -235,16 +235,24 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			}
 			if(trim($category->getData('wdph_megamenu_item_back_c')))
 			{
-				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link:first-child { background-color: ' . trim($category->getData('wdph_megamenu_item_back_c')) . '; }';
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>a.item-link { background-color: ' . trim($category->getData('wdph_megamenu_item_back_c')) . '; }';
 			}		
 			if(trim($category->getData('wdph_megamenu_item_hover_c')))
 			{
 				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { background-color: ' . trim($category->getData('wdph_megamenu_item_hover_c')) . '; }';
-			}		
+			}
+			else
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { background-color: inherit; }';
+			}
 			if(trim($category->getData('wdph_megamenu_drop_back_c')))
 			{
 				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-color: ' . trim($category->getData('wdph_megamenu_drop_back_c')) . '; }';
-			}		
+			}
+			else
+			{
+				//$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-color: inherit; }';
+			}
 			if(trim($category->getData('wdph_megamenu_drop_back_i')))
 			{
 				$this->categoriesCustomStyles .= ' .wdph-megamenu-container .wdph-megamenu-navigation-container li#wdph-megamenu-category-' . $categoryId . '>.wdph-megamenu-submenu { background-image: url(' . $this->storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/category/' . trim($category->getData('wdph_megamenu_drop_back_i')) . '); }';
@@ -258,11 +266,11 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			}
 			if(trim($category->getData('wdph_megamenu_font_shcol')))
 			{
-				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link:hover { color: ' . trim($category->getData('wdph_megamenu_font_shcol')) . '; }';			
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { color: ' . trim($category->getData('wdph_megamenu_font_shcol')) . '; }';			
 			}
 			else
 			{
-				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link:hover { color: inherit; }';
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { color:' . trim($this->megamenuHelper->getConfig('appearance/sidebar_item_font_hover_color')) . '; }';
 			}
 			if(trim($category->getData('wdph_megamenu_font_sbcol')))
 			{
@@ -270,7 +278,11 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 			}
 			if(trim($category->getData('wdph_megamenu_font_shbcol')))
 			{
-				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . '>a.item-link:hover { background-color: ' . trim($category->getData('wdph_megamenu_font_shbcol')) . '; }';
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { background-color: ' . trim($category->getData('wdph_megamenu_font_shbcol')) . '; }';
+			}
+			else
+			{
+				$this->categoriesCustomStyles .= ' .wdph-megamenu-sidebar-navigation li#wdph-megamenu-category-' . $categoryId . ':hover>a.item-link { background-color: ' . trim($this->megamenuHelper->getConfig('appearance/sidebar_item_back_hover_color')) . '; }';
 			}
 		}		
 	}
