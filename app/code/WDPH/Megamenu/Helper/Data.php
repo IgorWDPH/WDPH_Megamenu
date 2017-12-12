@@ -12,7 +12,7 @@ class Data extends AbstractHelper
     protected $storeManager;
     protected $objectManager;
 
-    const XML_PATH_SKELETON = 'wdph_megamenu_main/';
+    const XML_PATH_MEGAMENU = 'wdph_megamenu_main/';
 
     public function __construct(Context $context, ObjectManagerInterface $objectManager, StoreManagerInterface $storeManager)
 	{
@@ -23,7 +23,7 @@ class Data extends AbstractHelper
 
     public function getConfig($config_path, $storeCode = null)
     {
-        return $this->scopeConfig->getValue(self::XML_PATH_SKELETON . $config_path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeCode);
+        return $this->scopeConfig->getValue(self::XML_PATH_MEGAMENU . $config_path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeCode);
     }
 }
 ?>
