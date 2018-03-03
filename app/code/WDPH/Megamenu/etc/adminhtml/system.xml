@@ -51,12 +51,14 @@
                     <label>Label 3</label>
                     <comment>You can set lebel for some category.</comment>
                 </field>
-				<field id="staticblock_before" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="staticblock_before" translate="label comment" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Static Block Before Top Nav</label>
+					<source_model>WDPH\Megamenu\Model\Config\Cmsblockselector</source_model>
                     <comment>This block will be shown before top navigation menu.</comment>
                 </field>
-                <field id="staticblock_after" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="staticblock_after" translate="label comment" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Static Block After Top Nav</label>
+					<source_model>WDPH\Megamenu\Model\Config\Cmsblockselector</source_model>
                     <comment>This block will be shown after top navigation menu.</comment>
                 </field>
 			</group>
