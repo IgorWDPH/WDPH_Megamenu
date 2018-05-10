@@ -5,9 +5,9 @@ class AddUpdateHandlesObserver implements \Magento\Framework\Event\ObserverInter
 {    
 	protected $megamenuHelper;
     
-    public function __construct(\WDPH\Megamenu\Helper\Data $customTabsHelper)
+    public function __construct(\WDPH\Megamenu\Helper\Data $megamenuHelper)
     {
-		$this->megamenuHelper = $customTabsHelper;
+		$this->megamenuHelper = $megamenuHelper;
     }
    
     public function execute(\Magento\Framework\Event\Observer $observer)
