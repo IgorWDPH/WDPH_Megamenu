@@ -1,1 +1,4 @@
+.gitignore
+.idea/**
 app/code/WDPH/Megamenu/.idea/**
+app/design/frontend/WDPH/Megamenu/.idea/**

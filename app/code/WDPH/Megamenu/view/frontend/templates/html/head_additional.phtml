@@ -31,6 +31,19 @@ li .wdph-megamenu-item-add-label.label3 { color: <?php echo $this->megamenuHelpe
 echo $this->getCustomCss();
 ?>
 </style>
+<?php
+$options = [
+'' => '',
+];
+$serializedOptions = $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($options);
+?>
+<script type="text/x-magento-init">
+{
+	"*": {
+		"wdph_magamenu": <?php /* @noEscape */ echo $serializedOptions; ?>
+	}
+}
+</script>
 <script type="text/javascript">
 require(["jquery"], function ($)
 {
