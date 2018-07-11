@@ -12,7 +12,6 @@ define([
         },
         _create: function()
         {
-            console.log('from megamenu.js');
             $(".wdph-megamenu-container .wdph-megamenu-navigation-container li.wdph-megamenu-item").on('mouseenter', function()
             {
                 $(this).addClass('visible');
