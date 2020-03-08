@@ -32,7 +32,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
     }
 	
 	public function renderCategoriesMenuHtml($sidebar = false)
-	{		
+	{
 		$activeCategories = [];
 		foreach($this->getStoreCategories() as $child)
 		{
@@ -291,7 +291,7 @@ class Navigation extends \Magento\Catalog\Block\Navigation
 	{
 		if($this->megamenuHelper->getConfig('general/home'))
 		{
-			return '<li class="wdph-megamenu-item level-0 home"><a class="item-link" href="' . $this->storeManager->getStore()->getBaseUrl() . '"><span class="wdph-megamenu-item-label">' . __('Home') . '</span></a></li>';
+			return '<li id="wdph-megamenu-category-0" class="wdph-megamenu-item level-0 home"><a class="item-link" href="' . $this->storeManager->getStore()->getBaseUrl() . '"><span class="wdph-megamenu-item-label">' . __('Home') . '</span></a></li>';
 		}
 		return '';
 	}

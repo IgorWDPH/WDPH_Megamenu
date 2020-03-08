@@ -1,5 +1,8 @@
-<div class="wdph-megamenu-sidebar-navigation">
-	<ul class="wdph-megamenu">
-		<?php echo $this->renderCategoriesMenuHtml(true); ?>
-	</ul>
-</div>
+<?php
+if($this->megamenuHelper->getConfig('general/enable') && $this->megamenuHelper->getConfig('general/sidebar')): ?>
+	<div class="wdph-megamenu-sidebar-navigation">
+		<ul class="wdph-megamenu">
+			<?php echo $this->renderCategoriesMenuHtml(true); ?>
+		</ul>
+	</div>
+<?php endif; ?>
